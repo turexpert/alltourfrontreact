@@ -1,0 +1,40 @@
+@import "@/styles/mixins";
+
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include breakpoint(mobile) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    align-items: normal;
+  }
+}
+
+.sectionTitle {
+  max-width: 450px;
+  text-wrap: balance;
+}
+
+.sectionActions {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+
+  @include breakpoint(mobile) {
+    display: block;
+  }
+}

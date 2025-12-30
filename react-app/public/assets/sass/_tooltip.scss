@@ -1,0 +1,37 @@
+@import 'mixins';
+
+.hotel-features__tooltip {
+  position: absolute;
+  opacity: 0.8;
+  padding: 5px;
+  z-index: var(--rr-vh-chs-hotel-features-tooltip-z-index, 10);
+
+  .tooltip {
+    &-arrow {
+      position: absolute;
+      border-width: 5px 5px 0;
+      border-style: solid;
+      border-color: transparent;
+      border-block-start-color: var(--rr-vh-black-700);
+      inset-block-end: 0;
+      margin: 0;
+    }
+
+    &-inner {
+      max-width: 200px;
+      padding: 4px 8px;
+      @include font-caption;
+      word-wrap: break-word;
+      text-align: center;
+      color: white;
+      background-color: var(--rr-vh-black-700);
+    }
+
+    &__title {
+      margin: 0;
+      margin-block-end: 5px;
+      font: inherit;
+      font-size: 1.2em;
+    }
+  }
+}

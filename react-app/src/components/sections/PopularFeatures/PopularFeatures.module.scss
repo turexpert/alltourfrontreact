@@ -1,0 +1,29 @@
+@import "@/styles/mixins";
+
+.popularFeatures {
+  .navigate {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 15px;
+    background: #F5F6F9;
+    border-radius: 15px;
+    height: 212px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    @include new-22-semibold;
+
+    .icon {
+      font-size: 76px;
+    }
+
+    &:hover {
+      background: var(--bs-nav-link-hover-color);
+      color: var(--bs-white);
+    }
+  }
+}

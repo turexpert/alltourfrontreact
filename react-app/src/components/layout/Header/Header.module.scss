@@ -1,0 +1,247 @@
+@import "@/styles/mixins";
+
+.navbar {
+  padding: 0px;
+  align-items: center;
+  position: static;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+
+  .logo img {
+    max-width: 196px;
+  }
+
+  .navActions {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    align-items: center;
+    width: 140px;
+
+    img {
+      width: 28px;
+    }
+  }
+}
+
+.header {
+  position: sticky;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  transition: top 0.3s;
+  border-bottom: 1px solid #F5F6F9;
+
+  &.hidden {
+    top: -121px;
+  }
+}
+
+.topBar {
+  background-color: var(--bs-secondary);
+  color: var(--bs-white);
+
+  .topBarActions {
+    display: flex;
+    height: 60px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+
+    @include new-16-regular;
+    letter-spacing: 0.3px;
+  }
+
+  .socialLink {
+    display: flex;
+    gap: 31px;
+    align-items: center;
+  }
+
+  .socialIcon {
+    display: flex;
+    gap: 8px;
+
+    .btnWithIcon {
+      display: flex;
+      width: 32px;
+      height: 32px;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(255 255 255 / 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      font-size: 26px;
+      color: #fff;
+      border-radius: 4px;
+      text-decoration: none;
+
+      &:hover {
+        border-color: rgb(255 255 255 / 0.15);
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .phoneList {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 0;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+
+    @include new-20-regular;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .phoneDropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    color: #fff;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: var(--bs-secondary);
+    padding: 0 15px;
+    min-width: 200px;
+    z-index: 100;
+
+    .phoneItem {
+      padding: 9px 0px;
+
+      &:first-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      p {
+        @include new-16-regular;
+        margin: 0;
+      }
+
+      a {
+        @include new-20-regular;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #fff;
+        gap: 5px;
+
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.navbarNav {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  .navItem {
+    position: relative;
+  }
+
+  .navLink {
+    @include new-16-regular;
+
+    cursor: pointer;
+    color: #000;
+    font-weight: 500;
+    display: block;
+    text-decoration: none;
+    padding: 18px 15px;
+
+    &:hover {
+      color: #fba118;
+    }
+  }
+}
+
+// Mobile Header
+.mobileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  background-color: #fff;
+  border-bottom: 1px solid #F5F6F9;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  .logo img {
+    max-width: 150px;
+  }
+
+  .menuButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+  }
+}
+
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  padding: 20px;
+  overflow-y: auto;
+
+  .closeButton {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .mobileNavList {
+    list-style: none;
+    padding: 50px 0 0;
+    margin: 0;
+
+    li {
+      padding: 15px 0;
+      border-bottom: 1px solid #F5F6F9;
+
+      a {
+        @include new-18-regular;
+        color: #404A69;
+        text-decoration: none;
+
+        &:hover {
+          color: #fba118;
+        }
+      }
+    }
+  }
+}

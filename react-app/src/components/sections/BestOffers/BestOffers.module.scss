@@ -1,0 +1,147 @@
+@import "@/styles/mixins";
+
+$small-card: 439px;
+$big-card: 589px;
+$gap: 22px;
+$diff: $big-card - $small-card - $gap;
+
+.countryCards {
+  display: grid;
+  grid-template-rows: $small-card $diff $small-card;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 30px;
+
+  @include breakpoint(mobile) {
+    display: block;
+  }
+}
+
+.countryCard {
+  background: #F5F6F9;
+  border-radius: 15px;
+  overflow: hidden;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 20px;
+  }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: var(--bs-tertiary);
+    text-decoration: none;
+    justify-content: space-between;
+
+    &:hover {
+      .countryCardImage img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+.card1 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.card2 {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.card3 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.card4 {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+.card5 {
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.card6 {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.countryCardName {
+  display: flex;
+  flex-direction: row;
+  gap: 7px;
+  align-items: center;
+  position: absolute;
+  top: 20px;
+  left: 22px;
+  color: var(--bs-white);
+  z-index: 1;
+
+  @include breakpoint(mobile) {
+    @include new-18-regular;
+  }
+
+  .icon {
+    font-size: 22px;
+  }
+}
+
+.countryCardImage {
+  overflow: hidden;
+  border-radius: 15px;
+  flex: 1;
+  position: relative;
+  min-height: 200px;
+
+  @include breakpoint(mobile) {
+    max-height: 380px;
+  }
+
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease all;
+  }
+}
+
+.countryCardInfo {
+  padding: 24px;
+  font-size: 20px;
+
+  @include breakpoint(mobile) {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .icon {
+    font-size: 24px;
+
+    @include breakpoint(mobile) {
+      font-size: 20px;
+    }
+  }
+}
+
+.countryAction {
+  text-align: right;
+
+  @include breakpoint(mobile) {
+    text-align: left;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+}

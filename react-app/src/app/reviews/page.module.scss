@@ -1,0 +1,83 @@
+@import "@/styles/mixins";
+
+.reviews {
+  padding: 50px 0;
+
+  h1 {
+    margin-bottom: 30px;
+  }
+}
+
+.content {
+  @include new-16-regular;
+
+  > p {
+    margin-bottom: 30px;
+    color: #717171;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  @include breakpoint(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include breakpoint(mobile) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.image {
+  height: 200px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.category {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 5px 15px;
+  border-radius: 20px;
+  @include new-14-regular;
+  color: var(--bs-tertiary);
+}
+
+.cardContent {
+  padding: 25px;
+
+  h3 {
+    margin-bottom: 15px;
+    @include new-20-semibold;
+  }
+
+  p {
+    margin-bottom: 20px;
+    color: #717171;
+    @include new-14-regular;
+  }
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  @include new-14-regular;
+  color: #999;
+}
