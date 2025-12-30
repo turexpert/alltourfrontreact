@@ -1,4 +1,4 @@
-name: Deploy
+cname: Deploy
 
 on: [push]
 
@@ -25,7 +25,7 @@ jobs:
           SOURCE: "/dist/"
           REMOTE_HOST: alltour.by
           REMOTE_USER: dev
-          TARGET: /home/dev/alltourfront
+          TARGET: /home/dev/alltourfrontreact
           EXCLUDE: "/vendor/,.env,/api/,/monster/"
           SCRIPT_AFTER: |
            cp /home/dev/symlinksforprod/* /home/dev/public_html -r
