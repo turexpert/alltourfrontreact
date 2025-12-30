@@ -1,0 +1,28 @@
+@import "../../../../assets/sass/mixins";
+
+.countries {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 10px;
+  align-content: start;
+  width: 100%;
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 10px;
+    color: #fff;
+    text-decoration: none;
+
+    @include new-16-light;
+
+    img {
+      width: 24px;
+    }
+
+    &:hover {
+      color: var(--bs-primary);
+    }
+  }
+}

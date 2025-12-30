@@ -1,0 +1,50 @@
+<div class="form__row">
+  <div class="form__field">
+    @if(type === 'password') {
+      <button class="btn-icon form__toggle-password" (click)="togglePasswordVisibility()">
+        <span class="icon" [ngClass]="isPasswordVisible ? 'icon-eye_on' : 'icon-eye_off'"></span>
+      </button>
+    }
+    <input
+      class="form__input"
+      [class.form__input_password]="type === 'password'"
+      [formControl]="valueControl"
+      (blur)="onBlurEvent()"
+      [attr.type]="isPasswordVisible ? 'text' : type"
+      [attr.minlength]="minlength"
+      [attr.maxlength]="maxlength"
+      [attr.aria-label]="a11yAriaLabel || placeholder"
+      [attr.aria-describedby]="valueControl.invalid ? a11yDescribedbyId : null"
+    />
+    @if(placeholder) {
+      <label
+        class="form__floating-label"
+        [class.form__floating-label__filled]="valueControl.value?.length > 0"
+        [class.form__floating-label__invalid]="valueControl.invalid && valueControl.touched"
+        >{{ placeholder }}</label>
+    }
+  </div>
+  @if(!(valueControl.invalid && valueControl.touched)) {
+    <div
+    class="form__hint"
+    [id]="a11yDescribedbyId"
+  >
+    <ng-content select="[hint]"></ng-content>
+  </div>
+  }
+  @if(valueControl.invalid && valueControl.touched) {
+    <div
+      class="form__error"
+      [id]="a11yDescribedbyId"
+    >
+      @if(showPresetErrors) {
+        <ng-container>
+          <span *ngIf="valueControl.errors as errors">{{
+            errors | formError
+          }}</span>
+        </ng-container>
+      }
+      <ng-content select="[error]"></ng-content>
+    </div>
+  }
+</div>

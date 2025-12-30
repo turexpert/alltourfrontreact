@@ -1,0 +1,14 @@
+{
+  "actionButtons": {
+    "reloadButton": null,
+    "loadNpmCommands": false,
+    "defaultColor": "#ffef7c",
+    "commands": [
+      {
+        "name": "▶️ Start",
+        "singleInstance": true,
+        "command": "npm run start",
+      }
+    ]
+  },
+}

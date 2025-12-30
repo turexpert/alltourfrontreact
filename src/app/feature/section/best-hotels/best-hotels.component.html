@@ -1,0 +1,67 @@
+<app-section-wrapper>
+  <ng-container title>
+    <h2>Подборка лучших отелей</h2>
+  </ng-container>
+  <ng-container actions>
+    <div class="action">
+        <div class="filters">
+          <ng-select [items]="countries" appearance="outline" [searchable]="false" [clearable]="false"
+            [(ngModel)]="selectedCountry" (change)="onCountryChange($event)">
+            <ng-template ng-label-tmp let-item="item">
+              <span class="icon icon-location"></span> {{item}}
+            </ng-template>
+          </ng-select>
+        </div>
+        <div class="carousel-nav">
+          <ng-container *ngIf="carousel">
+            <button class="btn btn-round" (click)="carousel.prev()" [disabled]="carousel.navData.prev.disabled"><span class="icon icon-arrow_left_big"></span></button>
+            <button class="btn btn-round" (click)="carousel.next()" [disabled]="carousel.navData.next.disabled"><span class="icon icon-arrow_right_big"></span></button>
+          </ng-container>
+        </div>
+    </div>
+
+  </ng-container>
+  <ng-container content>
+    <div class="hotels-card">
+      @defer {
+        <owl-carousel-o #carousel [options]="carouselOptions">
+
+          @for (hotel of hotels; track hotel; let idx = $index) {
+          <ng-template carouselSlide>
+            <div class="hotel-card">
+
+              <div class="hotel-image">
+                <owl-carousel-o [options]="carouselOptions2">
+                  @for (image of hotel.images; track image; let idx = $index) {
+                  <ng-template carouselSlide>
+                    <img [src]="image" alt="{{ hotel.name }}">
+                  </ng-template>
+                  }
+                </owl-carousel-o>
+              </div>
+              <div class="badge" *ngIf="hotel.label">{{ hotel.label }}</div>
+              <div class="hotel-info">
+                <h3>{{ hotel.name }}</h3>
+                <div class="location"><span class="icon icon-location"></span>{{ hotel.country }}, {{hotel.city}}</div>
+                <div class="guest-likes">
+                  <div class="guest-likes-title">Что гостям нравится:</div>
+                  <ul>
+                    <li *ngFor="let like of hotel.likes">
+                      <img src="assets/icons/gl-icons/{{like.code}}.svg">{{ like.text }}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="buttons">
+                <button class="btn btn-secondary">Рассчитать тур</button>
+                <button class="btn btn-text">Об отеле</button>
+              </div>
+            </div>
+          </ng-template>
+          }
+        </owl-carousel-o>
+        }
+    </div>
+
+  </ng-container>
+</app-section-wrapper>

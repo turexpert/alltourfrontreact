@@ -1,0 +1,32 @@
+<button class="form__close btn btn-round" (click)="dialogRef.close()">
+  <span class="icon icon-close"></span>
+</button>
+
+<div class="form__container">
+  <h4 class="form__title">Авторизация</h4>
+  <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form__group">
+      <app-input-field
+        type="email"
+        [placeholder]="'Email'"
+        [formControl]="emailControl"
+        [touched]="markAllAsTouched"
+      ></app-input-field>
+      <app-input-field
+        [type]="passwordType"
+        [placeholder]="'Password'"
+        [formControl]="passwordControl"
+        [touched]="markAllAsTouched"
+      ></app-input-field>
+    </div>
+    <div class="form__forgot-password">
+      <button type="button" class="btn-link form__link" (click)="forgotPassword()">
+        Забыли пароль?
+      </button>
+    </div>
+    <div class="form__actions">
+      <button type="submit" class="btn btn-primary form__button">Войти</button>
+      <button type="button" class="btn btn-text form__button">Зарегистрироваться</button>
+    </div>
+  </form>
+</div>

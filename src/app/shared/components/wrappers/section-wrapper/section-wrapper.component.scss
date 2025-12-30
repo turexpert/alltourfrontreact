@@ -1,0 +1,43 @@
+
+@import '../../../../../assets/sass/mixins.breakpoints';
+
+section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @include breakpoint(mobile) {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    @include breakpoint(mobile) {
+      flex-direction: column;
+      align-items: normal;
+    }
+
+    .section-title{
+      max-width: 450px;
+      text-wrap: balance;
+
+    }
+
+    .section-actions {
+      display: flex;
+      flex-direction: row;
+      gap: 45px;
+
+      @include breakpoint(mobile) {
+        display: block;
+      }
+    }
+  }
+
+}

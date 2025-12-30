@@ -1,0 +1,24 @@
+<app-section-wrapper>
+  <ng-container title>
+    <h2>Советы туристам от экспертов</h2>
+  </ng-container>
+  <ng-container actions>
+    <button class="btn btn-tertiary">Перейти в блог</button>
+  </ng-container>
+  <ng-container content>
+    <div class="expert-cards">
+      @for (card of expertCards; track card;) {
+        <div class="expert-card">
+          <a href="{{card.link}}">
+            <div class="expert-card__image">
+              <img src="{{card.img}}">
+            </div>
+            <div class="expert-card__title">
+              {{card.title}}
+            </div>
+          </a>
+        </div>
+      }
+    </div>
+  </ng-container>
+</app-section-wrapper>

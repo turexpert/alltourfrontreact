@@ -1,0 +1,51 @@
+<ul class="navbar-nav">
+  <app-megamenu-wrapper [itemName]="'Каталог туров'">
+    <div class="tours-wrapper">
+      <div class="tours">
+        <h5>Виды отдыха</h5>
+        <div class="tour-types">
+          <div class="tour-types-link">
+            <a class="btn-icon-big tour-type" href="#">
+              <img class="icon icon-fire" src="assets/images/fire.svg">
+              <span class="text">Горящие туры</span>
+            </a>
+            <a class="btn-icon-big tour-type" href="#">
+              <img class="icon icon-hotel" src="assets/images/hotel.svg">
+              <span class="text">Отели дня</span>
+            </a>
+            <a class="btn-icon-big tour-type" href="#">
+              <img class="icon icon-search" src="assets/images/search.svg">
+              <span class="text">Поиск тура</span>
+            </a>
+          </div>
+          <div class="tour-links">
+            <a href="#">Круизы</a>
+            <a href="#">Отдых с детьми</a>
+            <a href="#">Автобусные туры</a>
+            <a href="#">Авторские туры</a>
+          </div>
+        </div>
+
+      </div>
+      <div class="countries-wrapper">
+        <h5>Страны</h5>
+        <app-country-list></app-country-list>
+      </div>
+    </div>
+  </app-megamenu-wrapper>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/news">Акции и новости</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/blog">Блог</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/about">О нас</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/contacts">Контакты</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/mice">MICE</a>
+  </li>
+</ul>

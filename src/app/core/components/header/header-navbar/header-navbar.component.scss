@@ -1,0 +1,110 @@
+@import "../../../../../assets/sass/mixins";
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  // gap: 30px;
+
+  .nav-link {
+    @include new-16-regular;
+
+    cursor: pointer;
+    color: #000;
+    font-weight: 500;
+    display: block;
+    text-decoration: none;
+    padding: 18px 15px;
+
+    &:hover {
+      color: #fba118;
+    }
+  }
+}
+
+.tours-wrapper {
+  display: flex;
+  gap: 45px;
+
+  h5 {
+    @include new-20-regular;
+    margin: 0;
+  }
+}
+.tours {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-right: 50px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.tour-types {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+.tour-types-link {
+  display: flex;
+  flex-direction: row;
+  gap: 17px;
+
+  .tour-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 26px;
+    color: #fff;
+    border-radius: 4px;
+
+    height: 108px;
+    width: 134px;
+    text-align: center;
+    text-decoration: none;
+    gap: 6px;
+    transition: background-color 0.2s ease;
+
+    &:first-child {
+      width: 127px;
+    }
+
+    &:hover {
+      background-color: var(--bs-primary);
+    }
+
+    .icon {
+      font-size: 20px;
+    }
+
+    .text {
+      @include new-16-regular;
+      line-height: 22px;
+    }
+  }
+}
+.tour-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+
+  a {
+    color: #ecf0f1;
+    text-decoration: none;
+    @include new-16-light;
+
+    &:hover {
+      color: var(--bs-primary);
+    }
+  }
+}
+
+.countries-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+
+
+}

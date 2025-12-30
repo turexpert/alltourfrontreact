@@ -1,0 +1,55 @@
+@import '../../../../assets/sass/mixins.breakpoints';
+
+.offices-section {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 60px 0;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+  }
+
+  h2 {
+    margin-bottom: 50px;
+
+    @include breakpoint(mobile) {
+      margin-bottom: 20px;
+    }
+  }
+
+  p {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &.with-icon {
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: row;
+      gap: 10px;
+
+      .ico-metro {
+        border: 1px solid;
+        border-radius: 50%;
+        width: 24px;
+        height: 24px;
+        font-size: 14px;
+        color: #f74747;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        letter-spacing: -2px;
+      }
+    }
+  }
+
+  &__map {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+}

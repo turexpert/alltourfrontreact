@@ -1,0 +1,17 @@
+<app-section-wrapper [hasContainer]="false" [hasContainerForHeader]="true">
+  <ng-container title>
+    <h2>Наши партнеры</h2>
+  </ng-container>
+  <ng-container content>
+    @defer {
+    <owl-carousel-o #carousel [options]="carouselOptions">
+
+      @for (partner of partners; track partner; let idx = $index) {
+        <ng-template carouselSlide [width]="166">
+          <img src="assets/images/partners/{{partner.src}}" alt="{{partner.name}}">
+        </ng-template>
+      }
+    </owl-carousel-o>
+    }
+  </ng-container>
+</app-section-wrapper>

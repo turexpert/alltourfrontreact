@@ -1,0 +1,18 @@
+<div class="home">
+  @if(isMobile$ | async) {
+    <app-popular-features-top></app-popular-features-top>
+  }
+  <app-home-banner></app-home-banner>
+  @if(!(isMobile$ | async)) {
+    <app-popular-features></app-popular-features>
+  }
+  <app-best-offers></app-best-offers>
+  <app-best-hotels></app-best-hotels>
+  <app-partners></app-partners>
+  <app-ticket-recommendation></app-ticket-recommendation>
+  <app-elite-format></app-elite-format>
+  <app-advice-experts></app-advice-experts>
+  <app-feedback></app-feedback>
+  <app-subscribe-section></app-subscribe-section>
+  <app-offices-section></app-offices-section>
+</div>

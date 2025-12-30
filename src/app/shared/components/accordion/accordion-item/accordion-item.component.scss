@@ -1,0 +1,56 @@
+@import "../../../../../assets/sass/mixins";
+@import "../../../../../assets/sass/mixins.breakpoints";
+
+.accordion {
+  &__item {
+    margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #F5F6F9;
+    border-radius: 15px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+
+    @include breakpoint(mobile) {
+      @include new-18-semibold;
+    }
+
+    .icon {
+      font-size: 25px;
+    }
+  }
+
+  &__content {
+    padding: 0 20px;
+
+
+    &__inner {
+      padding: 20px 0;
+      border-top: 1px solid rgba(64, 74, 105, 0.2);
+    }
+  }
+}
+
+
+
+// .accordion-collapse {
+//   overflow: hidden;
+//   max-height: 0;
+//   opacity: 0;
+//   transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+// }
+
+// .accordion-collapse.open {
+//   max-height: 500px; /* Или достаточно большая высота, чтобы поместить содержимое */
+//   opacity: 1;
+// }
+// .accordion-item {
+//   overflow: hidden;
+// }

@@ -1,0 +1,10 @@
+<ng-scrollbar>
+  <div class="popular-features">
+    @for (item of items; track item;) {
+    <div class="popular-features__navigate">
+      <span class="{{ item.class }}"></span>
+      <span class="popular-features__text">{{ item.title }}</span>
+    </div>
+    }
+  </div>
+</ng-scrollbar>

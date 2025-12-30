@@ -1,0 +1,15 @@
+  <section [class.container]="hasContainer">
+    @if(hasHeader) {
+      <div class="section-header" [class.container]="hasContainerForHeader">
+        <div class="section-title">
+          <ng-content select="[title]"></ng-content>
+        </div>
+        <div class="section-actions">
+          <ng-content select="[actions]"></ng-content>
+        </div>
+      </div>
+    }
+    <div>
+      <ng-content select="[content]"></ng-content>
+    </div>
+  </section>

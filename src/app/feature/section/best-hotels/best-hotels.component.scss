@@ -1,0 +1,215 @@
+@import "../../../../assets/sass/mixins";
+@import "../../../../assets/sass/mixins.breakpoints";
+
+.hotels-card {
+  ::ng-deep {
+    .owl-carousel .owl-nav {
+      display: none;
+    }
+  }
+}
+
+
+.action {
+  display: flex;
+  flex-direction: row;
+  gap: 45px;
+
+  @include breakpoint(mobile) {
+    margin-top: 20px;
+    display: block;
+  }
+
+  .filters {
+    display: flex;
+    justify-content: flex-end;
+
+    @include breakpoint(mobile) {
+      display: block;
+    }
+
+    .ng-select {
+      min-width: 330px;
+
+      @include breakpoint(mobile) {
+        min-width: auto;
+      }
+
+      .icon {
+        color: var(--bs-secondary);
+        font-size: 24px;
+      }
+      ::ng-deep {
+        .ng-value-container {
+          font-size: 18px;
+          .ng-value {
+            display: flex;
+            flex-direction: row;
+            gap: 8px;
+            align-items: center;
+          }
+        }
+      }
+    }
+  }
+  .carousel-nav {
+    display: flex;
+    gap: 10px;
+
+    @include breakpoint(mobile) {
+      display: none;
+    }
+  }
+}
+
+.hotel-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .hotel-image {
+    width: 100%;
+
+    ::ng-deep {
+      .owl-carousel {
+        border-radius: 15px;
+        overflow: hidden;
+
+        .owl-item {
+          height: 305px;
+          position: relative;
+          overflow: hidden;
+          border-radius: 15px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .owl-dots {
+          margin: 0;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+
+          .owl-dot span {
+            width: 7px;
+            height: 7px;
+            margin: 2px;
+            background: rgba(255, 255, 255, 0.5);
+          }
+
+          .owl-dot.active span,
+          .owl-dot:hover span {
+            background: rgba(255, 255, 255, 1);
+          }
+        }
+      }
+    }
+  }
+
+  .badge {
+    position: absolute;
+    z-index: 2;
+    background-color: var(--bs-primary);
+    color: white;
+    top: 18px;
+    left: 0;
+    padding: 5px 15px 5px 15px;
+    gap: 10px;
+    border-radius: 0px 5px 5px 0px;
+    font-weight: normal;
+
+    @include new-18-regular;
+  }
+
+  .hotel-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    h3 {
+      margin: 0;
+
+      @include new-22-semibold;
+    }
+    .location {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 5px;
+
+      @include new-14-regular;
+
+      .icon {
+        font-size: 18px;
+        color: var(--bs-secondary);
+      }
+    }
+
+    .guest-likes {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding-top: 10px;
+      padding-bottom: 5px;
+
+      .guest-likes-title {
+        @include new-18-semibold;
+      }
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 5px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          align-items: center;
+          font-size: 14px;
+
+          img {
+            max-width: 20px;
+            max-height: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    .btn {
+      padding: 12px 20px;
+      flex-grow: 1;
+
+      &.btn-text {
+        --bs-btn-color: #27A6AF;
+        --bs-btn-bg: #fff;
+        --bs-btn-border-color: #27A6AF;
+        --bs-btn-hover-color: #30C5D0;
+        --bs-btn-hover-bg: #fff;
+        --bs-btn-hover-border-color: #30C5D0;
+        --bs-btn-focus-shadow-rgb: 130, 138, 145;
+        --bs-btn-active-color: #1D8D95;
+        --bs-btn-active-bg: #fff;
+        --bs-btn-active-border-color: #1D8D95;
+        --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+        --bs-btn-disabled-color: #DADBE0;
+        --bs-btn-disabled-bg: #F5F6F9;
+        --bs-btn-disabled-border-color: #F5F6F9;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,19 @@
+<div class="header" [ngClass]="{'hidden': isHeaderHidden}">
+  <app-header-top [isHeaderHidden]="isHeaderHidden"></app-header-top>
+  <div class="container">
+    <nav class="navbar">
+      <div>
+        <a [routerLink]="['/']" class="logo">
+          <img src="assets/images/alltour_logo.png" alt="Alltour" class="logo-image">
+        </a>
+      </div>
+      <div>
+        <app-header-navbar></app-header-navbar>
+      </div>
+      <div class="nav-actions">
+        <button class="btn-icon"><img src="assets/icons/heart.svg"/></button>
+        <button class="btn-icon" (click)="openDialog()"><img src="assets/icons/account.svg"/></button>
+      </div>
+    </nav>
+  </div>
+</div>

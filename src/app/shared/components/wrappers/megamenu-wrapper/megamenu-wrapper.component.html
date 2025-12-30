@@ -1,0 +1,9 @@
+<li class="nav-item" (mouseenter)="open()" (mouseleave)="close()" [ngClass]="{'open': isOpen}">
+  <a class="nav-link">Каталог туров</a>
+
+  <div class="sub-menu" cdkTrapFocus cdkTrapFocusAutoCapture>
+    <div class="container">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</li>

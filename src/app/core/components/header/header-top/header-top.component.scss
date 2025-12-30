@@ -1,0 +1,106 @@
+@import "../../../../../assets/sass/mixins";
+
+.top-bar {
+  background-color: var(--bs-secondary);
+  color: var(--bs-white);
+
+  .top-bar_actions {
+    display: flex;
+    height: 60px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+
+    @include new-16-regular;
+    letter-spacing: 0.3px;
+
+    .social-link {
+      display: flex;
+      gap: 31px;
+      align-items: center;
+    }
+
+    .social-icon {
+      display: flex;
+      gap: 8px;
+
+      .btn-with-icon {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(255 255 255 / 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        font-size: 26px;
+        color: #fff;
+        border-radius: 4px;
+
+        &:hover {
+          border-color: rgb(255 255 255 / 0.15);
+        }
+
+        svg {
+          fill: #fff;
+        }
+      }
+    }
+  }
+
+  .phone-list {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 0;
+    letter-spacing: 0.2px;
+
+    @include new-20-regular;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+}
+
+.phone-list-menu {
+  color: #fff;
+  margin-top: 18px;
+  border-radius: 10px;
+  background-color: var(--bs-secondary);
+  padding: 0 15px;
+  width: 100%;
+
+  .cdk-menu-item {
+    padding: 9px 0px;
+
+    &:first-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    p {
+      @include new-16-regular;
+      margin: 0;
+    }
+
+    a {
+      @include new-20-regular;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+      color: #fff;
+      gap: 5px;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+

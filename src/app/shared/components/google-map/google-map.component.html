@@ -1,0 +1,9 @@
+<google-map height="100%" width="100%" [center]="center" [zoom]="zoom" [options]="options">
+  <map-marker *ngFor="let marker of markers" [position]="marker.position" [title]="marker.title" [icon]="marker.icon"
+    #mapMarker="mapMarker" (mapClick)="openInfoWindow(mapMarker, marker)">
+  </map-marker>
+  <!-- <map-info-window >
+    <div><strong [innerHTML]="selectedMarker?.title"></strong></div>
+    <div [innerHTML]="selectedMarker?.description"></div>
+  </map-info-window> -->
+</google-map>

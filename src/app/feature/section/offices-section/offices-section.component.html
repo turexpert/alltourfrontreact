@@ -1,0 +1,38 @@
+<section class="container">
+  <div class="offices-section">
+    <div class="offices-section__content">
+      <h2>Наши офисы в Минске</h2>
+      <div class="offices-section__list">
+        <app-accordion>
+          <app-accordion-item (toggle)="toggle($event, 1)">
+            <ng-container title>
+              Победителей, 65 (ТЦ Корона 'ЗАМОК') <br> пав. 401
+            </ng-container>
+            <ng-container content>
+              <p>пн-сб: 11:00–20:30, вс: 11:00–20:30</p>
+              <p>Тел: <a href="tel: +375291040044">+375 29 104 00 44</a></p>
+              <p>A1: <a href="tel: +375293048080">+375 29 304 80 80</a>, <a href="tel: +375447535455">+375 44 753 54
+                  55</a></p>
+              <p>По предварительной записи работаем в любое время</p>
+            </ng-container>
+          </app-accordion-item>
+          <app-accordion-item (toggle)="toggle($event, 2)">
+            <ng-container title>
+              Партизанский 150-а (TЦ "МОМО") <br> 2 этаж. красная зона
+            </ng-container>
+            <ng-container content>
+              <p class="with-icon"><span class="ico-metro">M</span> "Могилевская"</p>
+              <p>пн-пт: 11:00–20:00, сб: 11:00–19:00</p>
+              <p>A1: <a href="tel: +375293778080">+375 29 377 80 80</a>, <a href="tel: +375293078080">+375 29 307 80 80</a></p>
+              <p>По предварительной записи работаем в любое время</p>
+            </ng-container>
+          </app-accordion-item>
+        </app-accordion>
+      </div>
+
+    </div>
+    <div class="offices-section__map">
+      <app-google-map (mapInitialized)="onMapInitialized($event)"></app-google-map>
+    </div>
+  </div>
+</section>

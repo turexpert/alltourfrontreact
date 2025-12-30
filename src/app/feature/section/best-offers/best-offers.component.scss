@@ -1,0 +1,150 @@
+@import "../../../../assets/sass/mixins";
+@import "../../../../assets/sass/mixins.breakpoints";
+
+$small-card: 439px;
+$big-card: 589px;
+$gap: 22px;
+
+$diff: $big-card - $small-card - $gap;
+
+.country-cards {
+  display: grid;
+  grid-template-rows: $small-card $diff $small-card;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 30px;
+
+  @include breakpoint(mobile) {
+    display: block;
+  }
+
+  &.collapsed {
+    margin-bottom: 0;
+  }
+
+  .country-card {
+    @include breakpoint(mobile) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.country-card:nth-child(1) {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.country-card:nth-child(2) {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.country-card:nth-child(3) {
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.country-card:nth-child(4) {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+.country-card:nth-child(5) {
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.country-card:nth-child(6) {
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.country-action {
+  text-align: right;
+
+  @include breakpoint(mobile) {
+    text-align: left;
+  }
+}
+/*************/
+
+.country-card {
+  background: #F5F6F9;
+  border-radius: 15px;
+  overflow: hidden;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    color: var(--bs-tertiary);
+    text-decoration: none;
+    justify-content: space-between;
+
+    .country-card__name {
+      display: flex;
+      flex-direction: row;
+      gap: 7px;
+      align-items: center;
+
+      position: absolute;
+      top: 20px;
+      left: 22px;
+      color: var(--bs-white);
+      z-index: 1;
+
+      @include breakpoint(mobile) {
+        @include new-18-regular;
+      }
+
+      .icon {
+        font-size: 22px;
+      }
+    }
+
+    .country-card__image {
+      overflow: hidden;
+      border-radius: 15px;
+      flex: 1;
+
+      @include breakpoint(mobile) {
+        max-height: 380px;
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transition: 0.5s ease all;
+      }
+    }
+
+    .country-card__info {
+      padding: 24px;
+      font-size: 20px;
+
+      @include breakpoint(mobile) {
+        font-size: 16px;
+        padding: 20px;
+      }
+
+      > div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .icon {
+        font-size: 24px;
+
+        @include breakpoint(mobile) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

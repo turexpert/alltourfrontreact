@@ -1,0 +1,41 @@
+@import "../../../../../assets/sass/mixins";
+
+.nav-item {
+  .nav-link {
+    @include new-16-regular;
+
+    cursor: pointer;
+    color: #000;
+    font-weight: 500;
+    display: block;
+    text-decoration: none;
+    padding: 18px 15px;
+
+    &:hover {
+      color: #fba118;
+    }
+  }
+
+  .sub-menu {
+    display: none;
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    width: 100%;
+    background: var(--bs-tertiary);
+    color: var(--bs-white);
+  }
+
+  &.open {
+    background: var(--bs-tertiary);
+
+    .sub-menu {
+      display: block;
+      padding: 28px 0;
+    }
+    .nav-link {
+      color: var(--bs-white);
+      transition: none;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__logo">
+      <a href="#" class="">
+        <img
+          src="assets/images/footer-logo.png"
+          alt="Alltour"
+          class="logo-image"
+        />
+      </a>
+    </div>
+
+    @if(isMobile$ | async) {
+      <div class="footer__news__phone">
+        <a href="tel:+375293778080"
+          ><i _ngcontent-ng-c3435574879="" class="icon icon-phone"></i> +375 29
+          377 80 80</a
+        >
+      </div>
+    }
+
+    <div class="footer__content">
+      <div class="footer__left">
+        <div class="footer__catalog">
+          <h5>Каталог туров</h5>
+          <div class="footer__links">
+            <ul>
+              <li>
+                <a href="#"
+                  ><img
+                    class="icon icon-fire"
+                    src="assets/images/fire.png"
+                  />Горящие туры</a
+                >
+              </li>
+              <li><a href="#">Авторские туры</a></li>
+              <li><a href="#">Автобусные туры</a></li>
+              <li><a href="#">Отели дня</a></li>
+              <li><a href="#">Отдых с детьми</a></li>
+              <li><a href="#">Круизы</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Акции и новости</a></li>
+              <li><a href="#">Блог</a></li>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Контакты</a></li>
+              <li><a href="#"><img
+                  class="icon icon-wave"
+                  src="assets/images/wave.png"
+                />Вакансии</a></li>
+              <li><a href="#">Корпоративным клиентам</a></li>
+            </ul>
+          </div>
+        </div>
+        @if(!(isMobile$ | async)) {
+          <div class="footer__policy">
+            <a href="#">Политика обработки персональных данных</a>
+          </div>
+        }
+      </div>
+      <div class="footer__right">
+        @if(!(isMobile$ | async)) {
+        <div class="footer__news">
+          <div class="footer__news__section">
+            <h5>Последние новости</h5>
+            <ul>
+              <li>
+                <a class="footer__news__item" href="#"
+                  >Подбор тура онлайн по всем туроператорам</a
+                >
+                <div class="footer__news__date">2024-07-29 19:51</div>
+              </li>
+              <li>
+                <a class="footer__news__item" href="#"
+                  >Pаннее бронирование туров - лето 2024!</a
+                >
+                <div class="footer__news__date">2024-03-27 15:08</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer__news__phone">
+            <a href="tel:+375293778080"
+              ><i _ngcontent-ng-c3435574879="" class="icon icon-phone"></i> +375
+              29 377 80 80</a
+            >
+          </div>
+        </div>
+        }
+        <div class="footer__social">
+          <div class="footer__social__telegram">
+            <h5>Подпишитесь на наш Telegram канал</h5>
+            <div>
+              Получайте все спецпредложения и эксклюзивные акции первым
+              <button class="btn btn-secondary btn-social">
+                <span class="icon"
+                  ><img src="assets/images/icons/social-telegram.svg" /></span
+                >Telegram-канал
+              </button>
+            </div>
+          </div>
+
+          <div class="footer__social__link">
+            <app-social-links></app-social-links>
+          </div>
+
+          @if(isMobile$ | async) {
+            <div class="footer__policy">
+              <a href="#">Политика обработки персональных данных</a>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

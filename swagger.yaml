@@ -1,0 +1,124 @@
+openapi: 3.0.0
+info:
+  title: Alltour API
+  description: API для работы с турами, отелями, странами и меню.
+  version: 1.0.0
+
+servers:
+  - url: https://core.alltour.by
+    description: Production server
+
+paths:
+  /api/countries:
+    get:
+      summary: Получить список стран
+      description: Возвращает список всех стран
+      responses:
+        "200":
+          description: Успешный ответ с массивом стран
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      description: ID страны
+                    name:
+                      type: string
+                      description: Название страны
+                    url:
+                      type: string
+                      description: URL страны
+
+  /api/hotels:
+    get:
+      summary: Получить список отелей
+      description: Возвращает список всех отелей с возможностью фильтрации
+      parameters:
+        - name: country_id
+          in: query
+          description: Фильтр по стране
+          schema:
+            type: integer
+        - name: stars
+          in: query
+          description: Фильтр по количеству звезд
+          schema:
+            type: integer
+        - name: hotelcategory_id
+          in: query
+          description: Фильтр по категории отеля
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Успешный ответ с массивом отелей
+
+  /api/partners:
+    get:
+      summary: Получить список партнеров
+      description: Возвращает список всех партнеров
+      responses:
+        "200":
+          description: Успешный ответ с массивом партнеров
+
+  /api/menu:
+    get:
+      summary: Получить меню
+      description: Возвращает структуру меню с вложенными элементами
+      responses:
+        "200":
+          description: Успешный ответ с меню
+
+  /api/bestcountries:
+    get:
+      summary: Получить лучшие страны
+      description: Возвращает список лучших стран, отсортированных по приоритету
+      parameters:
+        - name: limit
+          in: query
+          description: Количество записей (по умолчанию 6)
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Успешный ответ с массивом лучших стран
+
+  /api/besthotel-countries:
+    get:
+      summary: Получить список стран с лучшими отелями
+      description: Возвращает страны, в которых есть лучшие отели
+      responses:
+        "200":
+          description: Успешный ответ с массивом стран
+
+  /api/besthotels:
+    get:
+      summary: Получить список лучших отелей
+      description: Возвращает список лучших отелей с фильтрацией по стране, курорту и ограничению количества записей.
+      parameters:
+        - name: country_id
+          in: query
+          description: ID страны для фильтрации
+          required: false
+          schema:
+            type: integer
+        - name: resort_id
+          in: query
+          description: ID курорта для фильтрации
+          required: false
+          schema:
+            type: integer
+        - name: limit
+          in: query
+          description: Количество записей в ответе (по умолчанию 10)
+          required: false
+          schema:
+            type: integer
+            default: 10
+      responses:
+        "200":
+          description: Успешный ответ с массивом лучших отелей

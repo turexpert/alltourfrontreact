@@ -1,0 +1,57 @@
+<app-section-wrapper>
+  <ng-container title>
+    <h2>Лучшие предложения по странам</h2>
+  </ng-container>
+  <ng-container content>
+    <div class="country-cards">
+      @for (offer of visibleOffers; track offer.id; let idx = $index) {
+      <div class="country-card country-card-{{idx + 1}}">
+        <a [routerLink]="['/country', offer.slug]">
+          <div class="country-card__name"><span class="icon icon-location"></span>{{offer.name}}</div>
+          <div class="country-card__image">
+            <img [src]="offer.img" [alt]="offer.name">
+          </div>
+          <div class="country-card__info">
+            <div>
+              <span class="icon icon-train"></span>
+              <span>от <strong>{{offer.bus.byn}} BYN</strong>/
+              ${{offer.bus.usd}}</span></div>
+            <div>
+              <span class="icon icon-plane"></span>
+              <span>от <strong>{{offer.plane.byn}} BYN</strong>/
+              ${{offer.plane.usd}}</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      }
+    </div>
+
+    <div class="country-cards" [class.collapsed]="isCollapsed" [@collapse]="isCollapsed ? 'collapsed' : 'expanded'">
+      @for (offer of hiddenOffers; track offer.id; let idx = $index) {
+      <div class="country-card country-card-{{idx + 1}}">
+        <a href="#">
+          <div class="country-card__name"><span class="icon icon-location"></span>{{offer.name}}</div>
+          <div class="country-card__image">
+            <img [src]="offer.img" [alt]="offer.name">
+          </div>
+          <div class="country-card__info">
+            <div>
+              <span class="icon icon-train"></span>
+              <span>от <strong>{{offer.bus.byn}} BYN</strong>/
+              ${{offer.bus.usd}}</span></div>
+            <div>
+              <span class="icon icon-plane"></span>
+              <span>от <strong>{{offer.plane.byn}} BYN</strong>/
+              ${{offer.plane.usd}}</span>
+            </div>
+          </div>
+        </a>
+      </div>
+      }
+    </div>
+
+    <div class="country-action"><button class="btn btn-tertiary" (click)="toggle()">{{isCollapsed ? 'Показать ещё' :
+        'Свернуть' }}</button></div>
+  </ng-container>
+</app-section-wrapper>

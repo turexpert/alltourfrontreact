@@ -1,0 +1,41 @@
+@import "../../../../../assets/sass/mixins";
+
+
+.navbar {
+  padding: 0px;
+  align-items: center;
+  position: static;
+  max-width: 100%;
+  overflow: hidden;
+
+  .logo img {
+    max-width: 196px;
+  }
+
+  .nav-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: end;
+    align-items: center;
+    width: 140px;
+
+    img {
+      width: 28px;
+    }
+  }
+}
+
+.header {
+  position: sticky;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  transition: top 0.3s;
+  border-bottom: 1px solid #F5F6F9;
+
+  &.hidden {
+    top: -121px;
+  }
+}

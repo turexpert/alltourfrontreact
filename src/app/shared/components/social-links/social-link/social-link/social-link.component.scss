@@ -1,0 +1,16 @@
+a {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255 255 255 / 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  font-size: 26px;
+  color: #fff;
+  border-radius: 4px;
+
+  &:hover {
+    border-color: rgb(255 255 255 / 0.15);
+  }
+}

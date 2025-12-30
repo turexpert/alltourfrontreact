@@ -1,0 +1,11 @@
+@import '../../../../assets/sass/mixins.breakpoints';
+
+google-map {
+  display: block;
+  height: 100%;
+
+  @include breakpoint(mobile) {
+     height: 300px;
+     width: 100%;
+  }
+}

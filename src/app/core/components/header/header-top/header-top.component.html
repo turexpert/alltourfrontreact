@@ -1,0 +1,41 @@
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar_actions">
+      <div>Свяжитесь с нами:</div>
+      <div class="social-link">
+        <div class="social-icon">
+          <app-social-link link="#" img="assets/images/icons/social-viber.svg"></app-social-link>
+          <app-social-link link="#" img="assets/images/icons/social-telegram.svg"></app-social-link>
+        </div>
+        <div>
+          <button [cdkMenuTriggerFor]="phoneList" class="phone-list">
+            <i class="icon icon-phone"></i>
+            +375 29 377 80 80
+            <i class="icon icon-arrow_down"></i>
+          </button>
+          <ng-template #phoneList>
+            <div class="phone-list-menu" cdkMenu>
+              <div cdkMenuItem>
+                <p>ТЦ Замок</p>
+                <a href="tel:+375293778080">
+                  <i class="icon icon-phone"></i>
+                  +375 29 377 80 80
+                </a>
+              </div>
+              <div cdkMenuItem>
+                <p>ТЦ Момо</p>
+                <a href="tel:+375293048080">
+                  <i class="icon icon-phone"></i>
+                  +375 29 304 80 80
+                </a>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+</div>

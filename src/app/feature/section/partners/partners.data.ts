@@ -1,0 +1,54 @@
+export const PARTNERS_MOCK_DATA = [
+  {
+    name: "partner1",
+    src: "partner1.png"
+  }, {
+    name: "partner2",
+    src: "partner2.png"
+  }, {
+    name: "partner3",
+    src: "partner3.png"
+  }, {
+    name: "partner4",
+    src: "partner4.png"
+  }, {
+    name: "partner5",
+    src: "partner5.png"
+  }, {
+    name: "partner6",
+    src: "partner6.png"
+  }, {
+    name: "partner7",
+    src: "partner7.png"
+  }, {
+    name: "partner8",
+    src: "partner8.png"
+  }, {
+    name: "partner9",
+    src: "partner9.png"
+  }, {
+    name: "partner10",
+    src: "partner10.png"
+  }, {
+    name: "partner11",
+    src: "partner11.png"
+  }, {
+    name: "partner12",
+    src: "partner12.png"
+  }, {
+    name: "partner13",
+    src: "partner13.png"
+  }, {
+    name: "partner14",
+    src: "partner14.png"
+  }, {
+    name: "partner15",
+    src: "partner15.png"
+  }, {
+    name: "partner16",
+    src: "partner16.png"
+  }, {
+    name: "partner17",
+    src: "partner17.png"
+  },
+];

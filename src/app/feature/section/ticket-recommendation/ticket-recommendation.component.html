@@ -1,0 +1,63 @@
+<app-section-wrapper [hasHeader]="false">
+  <ng-container content>
+    <div class="ticket-container" [class.form-submitted]="formSubmitted">
+      <div class="ticket-info">
+        <div class="ticket-info-content">
+          <div class="ticket-info-top">
+            <h2>Подберем идеальный тур уже сегодня</h2>
+            <p>Оставьте контакты и наш менеджер перезвонит вам, чтобы подобрать подходящий тур для вас</p>
+          </div>
+          <form *ngIf="!formSubmitted" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+            <input class="form-control" type="text" formControlName="name" placeholder="Введите ваше имя"
+              [ngClass]="{'has-value': formGroup.get('name')?.value}">
+            <input class="form-control" formControlName="phone" [placeholder]="placeholder" type='text' prefix="+375 "
+              mask="(00) 000-00-00" [validation]="true" (focus)="focus(true)" (blur)="focus(false)"
+              [class.has-value]="formGroup.get('phone')?.value">
+
+
+            <button type="submit" class="btn btn-primary">Отправить</button>
+          </form>
+          <div *ngIf="formSubmitted" class="ticket-message">
+            <div class="request-icon"><svg width="53" height="54" viewBox="0 0 53 54" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <circle cx="26.5" cy="27" r="26.5" fill="#FBA118"></circle>
+                <circle cx="26.4999" cy="26.9999" r="22.1455" stroke="white"></circle>
+                <path d="M17.6665 27.3135L23.2618 33.5847L35.012 20.415" stroke="white" stroke-width="3"
+                  stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg></div>
+            <div class="request-text">Ваша заявка принята! Наш эксперт свяжется с вами в течение дня</div>
+          </div>
+        </div>
+
+        <div class="ticket-flight">
+          <div class="ticket-flight-details">
+            <div>
+              <span class="label">SEAT</span>
+              <span class="data">15A</span>
+            </div>
+            <div>
+              <span class="label">DEPARTURE</span>
+              <span class="data">10:30</span>
+            </div>
+          </div>
+          <img src="assets/images/barcode.svg">
+        </div>
+        <div class="ticket-dashed">
+          @for (das of dashed; track das;) {
+          <div></div>
+          }
+        </div>
+      </div>
+      <div class="ticket-image">
+        <img class="ticket-image__desctope" src="assets/images/personal/operator1.png" alt="Manager">
+        <img class="ticket-image__mobile" src="assets/images/personal/operator1-xs.png" alt="Manager">
+
+        <div class="ticket-dashed">
+          @for (das of dashed; track das;) {
+          <div></div>
+          }
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</app-section-wrapper>
