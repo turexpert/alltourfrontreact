@@ -1,0 +1,58 @@
+@import "@/styles/mixins";
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordionItem {
+  border: 1px solid #DADBE0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  @include new-18-semibold;
+
+  &:hover {
+    background: #F5F6F9;
+  }
+
+  .icon {
+    font-size: 20px;
+    color: var(--bs-tertiary);
+    transition: transform 0.3s ease;
+  }
+}
+
+.title {
+  white-space: pre-line;
+}
+
+.accordionContent {
+  overflow: hidden;
+}
+
+.contentInner {
+  padding: 0 20px 20px;
+  @include new-16-regular;
+
+  a {
+    color: var(--bs-primary);
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

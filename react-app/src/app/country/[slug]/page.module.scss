@@ -1,0 +1,29 @@
+@import "@/styles/mixins";
+
+.country {
+  padding: 50px 0;
+
+  h1 {
+    margin-bottom: 30px;
+    text-transform: capitalize;
+  }
+}
+
+.content {
+  @include new-16-regular;
+
+  p {
+    margin-bottom: 20px;
+  }
+}
+
+.info {
+  background: #F5F6F9;
+  border-radius: 15px;
+  padding: 30px;
+  margin-top: 30px;
+
+  h2 {
+    margin-bottom: 15px;
+  }
+}

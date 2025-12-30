@@ -1,0 +1,157 @@
+@import "./mixins.breakpoints";
+@import "./mixins";
+@import "./variables";
+
+// Fonts
+@import "/public/assets/fonts/alltourIcon/style.css";
+@import "/public/assets/fonts/manrope/stylesheet.css";
+@import "/public/assets/fonts/menlo/stylesheet.css";
+
+// Global styles
+$font-size-base: 16px;
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  font-size: var(--bs-body-font-size);
+}
+
+h1 {
+  @include new-h1;
+}
+
+h2 {
+  @include new-h2;
+}
+
+h3 {
+  @include new-h3;
+}
+
+h4 {
+  @include new-h4;
+}
+
+h5 {
+  @include new-20-semibold;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  color: inherit;
+}
+
+a {
+  color: var(--bs-link-color);
+  text-decoration: var(--bs-link-decoration);
+}
+
+a:hover {
+  --bs-link-color-rgb: var(--bs-link-hover-color);
+  --bs-link-decoration: var(--bs-link-hover-decoration);
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1320px;
+}
+
+body:not(.isKeyDown) :focus {
+  outline: none;
+}
+
+.btn {
+  padding: 12px 40px;
+  border-radius: 10px;
+
+  @include new-16-regular;
+
+  &.btn-round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    line-height: 20px;
+
+    .icon-arrow_left_big {
+      margin-left: -3px;
+    }
+    .icon-arrow_right_big {
+      margin-right: -3px;
+    }
+  }
+
+  &-link {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+  &-icon {
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 25px;
+    line-height: 25px;
+  }
+}
+
+
+@media (max-width: 1199.98px) {
+  .container {
+    max-width: 100%;
+  }
+}
+
+// Preloader
+.preload {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  
+  .logo-image {
+    max-width: 200px;
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+// Icon font
+.icon {
+  font-family: 'alltourIcon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

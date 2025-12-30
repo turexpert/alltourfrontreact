@@ -1,0 +1,26 @@
+.socialLinks {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.socialLink {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255 255 255 / 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: rgb(255 255 255 / 0.25);
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}

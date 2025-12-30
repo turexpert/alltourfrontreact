@@ -1,0 +1,39 @@
+@import "@/styles/mixins";
+
+.popularFeaturesTop {
+  padding: 20px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 10px;
+  gap: 8px;
+  background: #F5F6F9;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  .icon {
+    font-size: 32px;
+  }
+
+  &:hover {
+    background: var(--bs-nav-link-hover-color);
+    color: var(--bs-white);
+  }
+}
+
+.title {
+  @include new-14-regular;
+  text-align: center;
+}

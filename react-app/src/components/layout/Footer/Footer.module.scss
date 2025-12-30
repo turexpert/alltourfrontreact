@@ -1,0 +1,188 @@
+@import "@/styles/mixins";
+
+.footer {
+  width: 100%;
+  background-color: #404A69;
+  color: #fff;
+  padding-top: 65px;
+  padding-bottom: 45px;
+
+  @include new-16-light;
+
+  @include breakpoint(mobile) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex: 1;
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    a {
+      display: flex;
+      gap: 5px;
+
+      .iconFire {
+        width: 14px;
+      }
+    }
+  }
+
+  h5 {
+    @include new-18-semibold;
+    margin-bottom: 15px;
+  }
+}
+
+.footerLogo {
+  margin-bottom: 30px;
+
+  @include breakpoint(mobile) {
+    margin-bottom: 20px;
+  }
+
+  a {
+    width: 269px;
+    display: block;
+
+    @include breakpoint(mobile) {
+      width: 195px;
+    }
+  }
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+
+  &:hover {
+    color: var(--bs-link-hover-color);
+  }
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+
+  @include breakpoint(mobile) {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+}
+
+.footerLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 2;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: row;
+  gap: 75px;
+  min-width: 550px;
+
+  @include breakpoint(desktop) {
+    min-width: 0;
+    gap: 15px;
+  }
+
+  a {
+    align-items: center;
+  }
+}
+
+.footerPolicy {
+  a {
+    font-size: 14px;
+    text-decoration: underline;
+  }
+}
+
+.footerRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 3;
+}
+
+.footerNews,
+.footerSocial {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  flex: 1;
+}
+
+.footerSocialTelegram {
+  @include breakpoint(mobile) {
+    display: none;
+  }
+}
+
+.footerNewsDate {
+  font-size: 14px;
+  opacity: 0.5;
+  margin-top: 5px;
+}
+
+.footerNewsPhone {
+  @include new-20-regular;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+.footerNewsSection {
+  @include breakpoint(mobile) {
+    display: none;
+  }
+
+  li {
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(255, 255, 255, 0.2);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.btnSocial {
+  display: flex;
+  padding: 10px 14px;
+  align-items: center;
+  gap: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+
+  @include new-18-regular;
+
+  .iconWrapper {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255 255 255 / 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 26px;
+    color: #fff;
+    border-radius: 4px;
+  }
+}

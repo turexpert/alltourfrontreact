@@ -1,0 +1,107 @@
+@import "./mixins.breakpoints";
+
+@mixin font-manrope($weight) {
+  font-family: "Manrope #{$weight}";
+}
+
+@mixin line-height($height) {
+  line-height: $height;
+}
+
+@mixin new-text($size, $weight, $line-height) {
+  font-size: $size;
+  @include font-manrope($weight);
+  @include line-height($line-height);
+}
+
+@mixin new-h1 {
+  @include new-text(55px, Bold, 110%);
+
+  @include breakpoint(mobile) {
+    @include new-text(27px, Bold, 110%);
+  }
+}
+
+@mixin new-h2 {
+  @include new-text(38px, Bold, 110%);
+
+  @include breakpoint(mobile) {
+    @include new-text(24px, Bold, 110%);
+  }
+}
+
+@mixin new-h3 {
+  @include new-text(26px, Bold, 120%);
+}
+
+@mixin new-h4 {
+  @include new-text(24px, Bold, 120%);
+}
+
+@mixin new-h1-mobile {
+  @include new-text(27px, Bold, 110%);
+}
+
+@mixin new-h2-mobile {
+  @include new-text(24px, Bold, 120%);
+}
+
+@mixin h3-mobile {
+  @include new-text(20px, Bold, 120%);
+}
+
+@mixin new-14-light {
+  @include new-text(14px, Light, 150%);
+}
+
+@mixin new-16-light {
+  @include new-text(16px, Light, 150%);
+}
+
+@mixin new-14-regular {
+  @include new-text(14px, Regular, 150%);
+}
+
+@mixin new-16-regular {
+  @include new-text(16px, Regular, 150%);
+}
+
+@mixin new-16-semibold {
+  @include new-text(16px, Semibold, 140%);
+}
+
+@mixin new-18-light {
+  @include new-text(18px, Light, 140%);
+}
+
+@mixin new-18-semibold {
+  @include new-text(18px, Semibold, 140%);
+}
+
+@mixin new-18-regular {
+  @include new-text(18px, Regular, 140%);
+}
+
+@mixin new-20-regular {
+  @include new-text(20px, Regular, 140%);
+}
+
+@mixin new-20-semibold {
+  @include new-text(20px, Semibold, 140%);
+}
+
+@mixin new-22-regular {
+  @include new-text(22px, Regular, 150%);
+}
+
+@mixin new-22-semibold {
+  @include new-text(22px, Semibold, 130%);
+}
+
+@mixin new-24-regular {
+  @include new-text(24px, Regular, 150%);
+}
+
+@mixin new-24-semibold {
+  @include new-text(24px, Semibold, 150%);
+}

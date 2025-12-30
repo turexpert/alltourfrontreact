@@ -1,0 +1,121 @@
+@import "@/styles/mixins";
+
+.banner {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background-image: url('/assets/images/banner/banner.svg');
+  height: 700px;
+  background-size: cover;
+  background-position: bottom;
+
+  @include breakpoint(tablet) {
+    height: auto;
+  }
+
+  .plane {
+    position: absolute;
+    top: 45px;
+    left: 0;
+    z-index: 0;
+
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+
+  .palm {
+    position: absolute;
+    top: 45px;
+    right: -150px;
+    z-index: 0;
+
+    @include breakpoint(tablet) {
+      display: none;
+    }
+  }
+}
+
+.bannerInner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  padding: 40px;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint(mobile) {
+    gap: 30px;
+    padding: 45px 20px;
+  }
+}
+
+.bannerInfo {
+  max-width: 728px;
+  text-align: center;
+  color: var(--bs-tertiary);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .description {
+    @include new-20-semibold;
+    text-wrap: balance;
+    letter-spacing: 0px;
+
+    @include breakpoint(mobile) {
+      @include new-16-semibold;
+    }
+  }
+}
+
+.search {
+  width: 100%;
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@keyframes sway {
+  0% {
+    transform: translateY(-6px) scale(1) rotate(1deg);
+  }
+
+  100% {
+    transform: translateY(6px) scale(1.06) rotate(-1deg);
+  }
+}
+
+.palm {
+  animation-name: sway;
+  animation-duration: 8s;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes plane {
+  0% {
+    transform: translateY(-8px) scale(1);
+  }
+
+  100% {
+    transform: translateY(8px) scale(1.06);
+  }
+}
+
+.plane {
+  animation-name: plane;
+  animation-duration: 6s;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
