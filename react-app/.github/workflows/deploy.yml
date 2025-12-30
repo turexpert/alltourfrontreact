@@ -1,0 +1,45 @@
+name: Deploy
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18.x'
+          cache: 'npm'
+          
+      - name: Install npm dependencies
+        run: npm install --legacy-peer-deps
+        
+      - name: Run build task
+        run: npm run build
+        
+      - name: Prepare deployment package
+        run: |
+          mkdir -p deploy
+          cp -r .next/standalone/* deploy/
+          cp -r .next/static deploy/.next/static
+          cp -r public deploy/public
+          
+      - name: Deploy to Prod
+        uses: easingthemes/ssh-deploy@main
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.KEY }}
+          ARGS: "-rlgoDzvc -i --delete"
+          SOURCE: "deploy/"
+          REMOTE_HOST: alltour.by
+          REMOTE_USER: dev
+          TARGET: /home/dev/alltourfrontreact
+          EXCLUDE: "/vendor/,.env,/api/,/monster/"
+          SCRIPT_AFTER: |
+            cd /home/dev/alltourfrontreact
+            cp /home/dev/symlinksforprod/* /home/dev/public_html -r
+            echo "Deployment completed"
+            echo $RSYNC_STDOUT
